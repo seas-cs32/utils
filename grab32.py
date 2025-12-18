@@ -76,7 +76,7 @@ SETUP_REPO = 'template'
 # https://drive.google.com/file/d/FILE_ID/view?usp=sharing
 PSETS = {
     'pset1': '17jx0YjyoKPbaLsfaPsuFrKjpZm05tfDc',
-    'pset2': '1RXwyEuSp-nomfzvtv28cSO9KQZZT8TCa',
+    'pset2': '1ylmOx0gNM0MdJWFB0AjQVKaJWPnZUpOs',
     'pset3': '17SEp67vLgMytPuyuHNNnZxF5pPRYctVV',
     'pset4': '1-oOHOW9m7RGyuVUmRM-LyLrFnDUtZEEM',
     'pset5': '1jYYeNKa6fAdtnQ4kiIUSCj-j8U7SLSmP',
