@@ -1,10 +1,13 @@
 ### utils/grab32.py
 """
-This script works within the cs50.dev world and grabs three kinds
+This script works within the cs50.dev world and grabs four kinds
 of files:
   1. the CS32 GitHub repo files for a book chapter;
   2. the .devcontainer.json file for configuring the codespace;
   3. the files for a programming problem set kept in cs32-public.
+  4. the files for a quiz (which are treated like pset files, but
+     stored in private Google Driver folder).
+
 
 If you wanted the book files for Chapter 4, you'd run this script
 as follows:
@@ -80,8 +83,11 @@ PSETS = {
     'pset3': '159p2NGDOKk2DZQY-mKuFO1BJNJY_c8jd',
     'pset4': '13RA2Hyfh0P-py813vksalwoTsl-CrZ6j',
     'pset5': '1MuRp9DtuKG7MWlrLX4HMWd3kHG4WHSn2',
+    'pset6': 'update-me',
+    'quiz1': 'update-me',
+    'quiz2': 'update-me'
 }
-
+# Quizzes are treated like psets, but they live in a private folder.
 
 def determine_working_dir():
     """Finds and returns the root directory of the user's codespace"""
@@ -151,11 +157,11 @@ def main():
         # Special case
         SETUP = True
         repo = SETUP_REPO
-    elif repo[:len('pset')] == 'pset':
+    elif repo[:len('pset')] == 'pset' or repo[:len('quiz')] == 'quiz':
         PSET = True
         # Check for a valid pset number
-        if not re.fullmatch(r'pset[1-5]', repo):
-            sys.exit(f"ERROR: {repo} is not a valid; did you mistype it?")
+        if not re.fullmatch(r'pset[1-6]', repo) and not re.fullmatch(r'quiz[1-2]', repo):
+                sys.exit(f"ERROR: {repo} is not a valid; did you mistype it?")
     else:
         # Check for and gracefully handle bad parameters
         if re.fullmatch(r'chap[01][1-8]', repo) or repo == 'chap09' or repo == 'chap10':
