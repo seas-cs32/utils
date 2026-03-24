@@ -1,4 +1,4 @@
-### utils/grab32.py - VERSION 20260303
+### utils/grab32.py - VERSION 20260324
 """
 This script works within the cs50.dev world and grabs four kinds
 of files:
@@ -164,10 +164,10 @@ def main():
                 sys.exit(f"ERROR: {repo} is not a valid; did you mistype it?")
     else:
         # Check for and gracefully handle bad parameters
-        if re.fullmatch(r'chap[01][1-8]', repo) or repo == 'chap09' or repo == 'chap10':
+        if re.fullmatch(r'chap[01][1-8]', repo) or repo == 'chap09' or repo == 'chap10' or re.fullmatch(r'section[01][1-8]', repo) or repo == 'section09':
             pass
         else:
-            sys.exit(f"ERROR: {repo} is not a valid; did you mistype it?")
+            sys.exit(f"ERROR: {repo} is not valid; did you mistype it?")
 
     # Start alerting the user to our progress
     print(f"STARTING grab32.py ...")
